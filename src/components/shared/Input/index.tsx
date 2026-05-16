@@ -1,13 +1,25 @@
-import styles from "./index.module.css";
 import type React from "react";
+import styles from "./index.module.css";
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  onSubmit?: () => void;
+interface FormProps {
+  containerClassName?: string;
+  onSubmit: React.SubmitEventHandler<HTMLFormElement> | undefined;
 }
 
-export default function Input({ onSubmit, className = "", ...props }: Props) {
+type Props = FormProps &
+  Omit<React.InputHTMLAttributes<HTMLInputElement>, "onSubmit">;
+
+export default function Input({
+  onSubmit,
+  containerClassName = "",
+  className = "",
+  ...props
+}: Props) {
   return (
-    <form className={styles.form} onSubmit={onSubmit}>
+    <form
+      className={`${styles.form} ${containerClassName}`}
+      onSubmit={onSubmit}
+    >
       <input
         type="text"
         className={`${styles.input} ${className}`}

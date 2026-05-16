@@ -1,5 +1,6 @@
 import logo from "../../assets/logo.png";
 import type { HTMLAttributes } from "react";
+import Link from "./Link";
 
 interface Props extends HTMLAttributes<HTMLImageElement> {
   containerClassName?: string;
@@ -11,13 +12,15 @@ export default function Logo({
   ...props
 }: Props) {
   return (
-    <figure className={containerClassName}>
-      <img
-        className={`img ${className}`}
-        src={logo}
-        alt="CMovie Logo"
-        {...props}
-      />
-    </figure>
+    <Link to="/">
+      <figure className={containerClassName}>
+        <img
+          className={`img ${className}`}
+          src={logo}
+          alt="CMovie Logo"
+          {...props}
+        />
+      </figure>
+    </Link>
   );
 }
