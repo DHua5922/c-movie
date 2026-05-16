@@ -1,0 +1,82 @@
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero__figure-wave {
+    background-image: url("../../../assets/wave.png");
+    background-size: cover;
+    width: 100%;
+    height: 30rem;
+    position: absolute;
+    z-index: -2;
+    bottom: -32rem;
+    animation: slideInFromLeft var(--animation-duration) ease-in-out;
+}
+
+.hero__img--wrapper {
+    margin-top: 8rem;
+    width: 35rem;
+    animation: scaleIn var(--animation-duration) ease-in;
+}
+
+.hero__header {
+    opacity: 0;
+    animation: rotateIn var(--animation-duration) ease forwards;
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__search-input {
+    width: 100%;
+}
+
+@keyframes rotateIn {
+    0% {
+        transform: rotate(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(1080deg);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

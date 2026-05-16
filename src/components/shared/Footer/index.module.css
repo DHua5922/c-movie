@@ -1,0 +1,45 @@
+footer {
+    background-color: var(--primary-color);
+    animation: slideInFromLeft var(--animation-duration) ease-in-out;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.footer__img--wrapper {
+    width: 8rem;
+    margin-bottom: 1rem;
+}
+.footer__img {
+    filter: brightness(0) invert(1);
+}
+
+.footer__link--list {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.footer__divider {
+    height: 1px;
+    background-color: var(--primary-color);
+    margin: 2rem 0;
+    opacity: 0.25;
+    width: 100%;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

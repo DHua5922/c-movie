@@ -1,0 +1,15 @@
+.form {
+    width: 100%;
+}
+
+.input {
+    border-radius: var(--round-border-radius);
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+.input:focus {
+    border: 1px solid var(--primary-color);
+}
