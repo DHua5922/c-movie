@@ -1,0 +1,22 @@
+.header {
+    opacity: 0;
+    animation: rotateIn var(--animation-duration) ease forwards;
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+@keyframes rotateIn {
+    0% {
+        transform: rotate(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(1080deg);
+        opacity: 1;
+    }
+}

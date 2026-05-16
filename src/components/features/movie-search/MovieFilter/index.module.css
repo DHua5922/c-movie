@@ -1,0 +1,13 @@
+.movie__filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie__filter--select {
+    padding: 0.5rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 8px;
+}

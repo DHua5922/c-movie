@@ -1,0 +1,39 @@
+.title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.loader__container {
+    justify-content: center;
+}
+
+.movie__search-results {
+    padding: 2rem 0;
+    min-height: 100vh;
+}
+
+.movie__search-results--message {
+    text-align: center;
+}
+
+.movie__list {
+    display: flex;
+    flex-wrap: wrap;
+    height: 75vh;
+    overflow-y: auto;
+    margin: 2rem 0;
+    transition: all var(--transition-duration) ease;
+    animation: fadeIn var(--animation-duration) ease;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
