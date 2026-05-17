@@ -53,7 +53,9 @@ export default function MoviePage() {
 
   return (
     <section>
-      <Container className={`scale-in ${styles.movie__container}`}>
+      <Container
+        className={`min-full-height scale-in ${styles.movie__container}`}
+      >
         {isLoading ? (
           <Loader />
         ) : (
