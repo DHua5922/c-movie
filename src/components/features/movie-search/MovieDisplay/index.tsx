@@ -9,7 +9,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 export default function MovieDisplay({ movie, className, ...props }: Props) {
   return (
-    <div className={`${styles["movie__wrapper"]} ${className}`} {...props}>
+    <div className={`${styles.movie__wrapper} ${className}`} {...props}>
       <button
         key={movie.id}
         className={styles["movie"]}

@@ -14,7 +14,31 @@
     align-items: center;
     gap: 1rem;
     animation: slideInFromRight var(--animation-duration) ease;
+    transition: all var(--transition-duration) ease;
 }
+
+.nav__hamburger--button {
+    display: none;
+}
+.nav__hamburger {
+    width: 100%;
+    height: 100%;
+}
+
+.modal__link--list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 5rem;
+}
+.modal__link--button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 
 @keyframes slideInFromRight {
     0% {
@@ -24,5 +48,21 @@
     100% {
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav__link--list {
+        width: 0;
+        opacity: 0;
+    }
+
+    .nav__hamburger--button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 2rem;
+        display: block;
+        animation: slideInFromRight var(--animation-duration) ease;
     }
 }

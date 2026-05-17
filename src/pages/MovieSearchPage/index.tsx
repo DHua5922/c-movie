@@ -159,7 +159,10 @@ export default function MovieSearchPage() {
   return (
     <section>
       <Container>
-        <Header {...movieSearchInput}>
+        <Header
+          className={styles["movie__search-header"]}
+          {...movieSearchInput}
+        >
           <h1 className={`text-primary ${styles.title}`}>Search movies</h1>
         </Header>
 
@@ -173,6 +176,7 @@ export default function MovieSearchPage() {
                   <MovieFilter
                     totalResults={totalResults}
                     onChange={onSortMovies}
+                    className={styles.movie__filter}
                   />
 
                   <div className={`scale-in ${styles.movie__list}`}>
@@ -183,6 +187,7 @@ export default function MovieSearchPage() {
                           ...movie,
                           onClick: () => navigate(`/movies/${movie.id}`),
                         }}
+                        className={styles.movie__wrapper}
                       />
                     ))}
                   </div>

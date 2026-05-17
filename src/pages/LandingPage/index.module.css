@@ -9,18 +9,34 @@
     margin-bottom: 2rem;
 }
 
+.hero__header, .hero__img--wrapper {
+    padding: 0 2rem;
+}
+
 .hero__figure-wave {
-    background-image: url("../../../assets/wave.png");
+    background-image: url("../../assets/wave.png");
     background-size: cover;
-    width: 100%;
+    left: 0;
+    right: 0;
     height: 30rem;
     position: absolute;
     z-index: -2;
-    bottom: -32rem;
+    bottom: -28rem;
 }
 
 .hero__img--wrapper {
     margin: 0 auto;
     margin-top: 8rem;
-    width: 35rem;
+    max-width: 35rem;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 6vw;
+    }
+
+    .subtitle {
+        font-size: 4vw;
+    }
 }
