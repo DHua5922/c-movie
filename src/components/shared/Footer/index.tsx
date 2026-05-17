@@ -24,7 +24,7 @@ export default function Footer() {
           ))}
         </ul>
         <hr className={styles.footer__divider} />
-        <p className="text-secondary">
+        <p className={`text-secondary ${styles.footer__copyright}`}>
           &copy; {new Date().getFullYear()} CMovie. All rights reserved.
         </p>
       </Container>

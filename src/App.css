@@ -61,6 +61,10 @@ li {
   color: var(--primary-color);
 }
 
+.min-full-height {
+  min-height: 100vh;
+}
+
 .scale-in {
   animation: scaleIn var(--animation-duration) ease;
 }

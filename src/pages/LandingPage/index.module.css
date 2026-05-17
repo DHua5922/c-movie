@@ -13,21 +13,10 @@
     padding: 0 2rem;
 }
 
-.hero__figure-wave {
-    background-image: url("../../assets/wave.png");
-    background-size: cover;
-    left: 0;
-    right: 0;
-    height: 30rem;
-    position: absolute;
-    z-index: -2;
-    bottom: 2rem;
-}
-
 .hero__img--wrapper {
     margin: 0 auto;
     margin-top: 8rem;
-    max-width: 35rem;
+    max-width: 45rem;
     width: 100%;
 }
 
