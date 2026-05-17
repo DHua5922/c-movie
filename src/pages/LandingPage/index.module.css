@@ -21,7 +21,7 @@
     height: 30rem;
     position: absolute;
     z-index: -2;
-    bottom: -28rem;
+    bottom: 2rem;
 }
 
 .hero__img--wrapper {
