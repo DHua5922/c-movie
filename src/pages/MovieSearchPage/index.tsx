@@ -60,7 +60,7 @@ function getMovieSortOption(value: string) {
 }
 
 function useMovies(desiredMovieName: string) {
-  const [movies, setMovies] = useState<MovieDisplayType[]>([]);
+  const [movies, setMovies] = useState<MovieDisplayType[] | null>(null);
   const [totalPages, setTotalPages] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -83,7 +83,7 @@ function useMovies(desiredMovieName: string) {
   );
 
   const sortMovies = useCallback((sortOption: MovieSortOption) => {
-    setMovies((movies) => sortMovieList(movies, sortOption));
+    setMovies((movies) => sortMovieList(movies || [], sortOption));
   }, []);
 
   useEffect(() => {
@@ -96,7 +96,8 @@ function useMovies(desiredMovieName: string) {
 
   return {
     movies,
-    sortMovies,
+    onSortMovies: (event: React.ChangeEvent<HTMLSelectElement>) =>
+      sortMovies(getMovieSortOption(event.target.value)),
     totalPages,
     totalResults,
     isLoading,
@@ -143,10 +144,17 @@ function usePagination(
 export default function MovieSearchPage() {
   const [params] = useSearchParams();
   const movieName = params.get("name") || "";
-  const { movies, sortMovies, totalPages, totalResults, isLoading, getMovies } =
-    useMovies(movieName);
+  const {
+    movies,
+    onSortMovies,
+    totalPages,
+    totalResults,
+    isLoading,
+    getMovies,
+  } = useMovies(movieName);
   const movieSearchInput = useMovieSearchInput(movieName);
   const pagination = usePagination(totalPages, getMovies);
+  const navigate = useNavigate();
 
   return (
     <section>
@@ -160,24 +168,30 @@ export default function MovieSearchPage() {
             <Loader className={styles.loader__container} />
           ) : (
             <>
-              {movies.length > 0 ? (
+              {movies && movies.length > 0 && (
                 <>
                   <MovieFilter
                     totalResults={totalResults}
-                    onChange={(evt) =>
-                      sortMovies(getMovieSortOption(evt.target.value))
-                    }
+                    onChange={onSortMovies}
                   />
 
-                  <div className={styles.movie__list}>
+                  <div className={`scale-in ${styles.movie__list}`}>
                     {movies.map((movie) => (
-                      <MovieDisplay key={movie.id} movie={movie} />
+                      <MovieDisplay
+                        key={movie.id}
+                        movie={{
+                          ...movie,
+                          onClick: () => navigate(`/movies/${movie.id}`),
+                        }}
+                      />
                     ))}
                   </div>
 
                   <Pagination {...pagination} />
                 </>
-              ) : (
+              )}
+
+              {movies && movies.length === 0 && (
                 <h2
                   className={`message ${styles["movie__search-results--message"]}`}
                 >

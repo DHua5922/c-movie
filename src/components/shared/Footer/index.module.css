@@ -1,6 +1,5 @@
 footer {
     background-color: var(--primary-color);
-    animation: slideInFromLeft var(--animation-duration) ease-in-out;
 }
 
 .footer__container {
@@ -30,16 +29,4 @@ footer {
     margin: 2rem 0;
     opacity: 0.25;
     width: 100%;
-}
-
-@keyframes slideInFromLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }

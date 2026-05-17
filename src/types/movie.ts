@@ -14,6 +14,15 @@ interface MovieDisplay {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  onClick: () => void;
+  genres: Array<{ id: number; name: string }>;
+  tagline: string;
+  status: string;
+  spoken_languages?: Array<{
+    english_name: string;
+    iso_639_1: string;
+    name: string;
+  }>;
 }
 
 export type { MovieDisplay };

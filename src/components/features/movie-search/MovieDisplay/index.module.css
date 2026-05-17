@@ -8,36 +8,12 @@
     cursor: pointer;
     box-shadow: 1px 2px 11px -4px #000000;
     height: 100%;
+    border: none;
+    transition: all var(--transition-duration) ease;
+    width: 100%;
 }
 .movie:hover {
     transform: scale(1.1);
-}
-
-.movie__overlay {
-    position: absolute;
-    height: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: var(--primary-color);
-    width: 100%;
-    color: var(--secondary-color);
-    display: flex;
-    align-items: center;
-    font-size: 1.25rem;
-    justify-content: center;
-    opacity: 0;
-}
-
-.movie:hover .movie__overlay {
-    height: 100%;
-    opacity: 1;
-}
-
-.movie,
-.movie__overlay {
-    transition: all var(--transition-duration) ease;
 }
 
 .movie__title {
@@ -45,19 +21,4 @@
     font-weight: 500;
     text-align: center;
     padding: 0.5rem;
-}
-
-.movie__poster--skeleton,
-.movie__poster {
-    width: 100%;
-    height: 20rem;
-}
-
-.movie__poster--skeleton {
-    background-color: gray;
-    color: var(--secondary-color);
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

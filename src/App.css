@@ -60,3 +60,39 @@ li {
   font-size: 2rem;
   color: var(--primary-color);
 }
+
+.scale-in {
+  animation: scaleIn var(--animation-duration) ease;
+}
+
+.slide-in-from-left {
+  animation: slideInFromLeft var(--animation-duration) ease;
+}
+
+.scale-in, .slide-in-from-left {
+  transition: all var(--transition-duration) ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
