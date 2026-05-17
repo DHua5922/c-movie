@@ -9,8 +9,12 @@
 }
 
 .movie__search-results {
-    padding: 2rem 0;
     min-height: 100vh;
+}
+
+.movie__search-header,
+.movie__search-results {
+    padding: 1rem 2rem;
 }
 
 .movie__search-results--message {
@@ -23,4 +27,36 @@
     height: 75vh;
     overflow-y: auto;
     margin: 2rem 0;
+}
+
+.movie__wrapper {
+    width: 25%;
+    transition: all var(--transition-duration) ease;
+}
+
+@media (max-width: 992px) {
+    .movie__wrapper {
+        width: calc(100% / 3);
+    }
+}
+
+@media (max-width: 768px) {
+    .movie__wrapper {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 7vw;
+    }
+
+    .movie__wrapper {
+        width: 100%;
+    }
+
+    .movie__filter {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }

@@ -19,6 +19,7 @@ export default function LandingPage() {
           }}
           value={searchInput}
           onChange={(event) => setSearchInput(event.target.value)}
+          className={styles.hero__header}
         >
           <h1 className={`${styles.title} text-primary`}>Welcome to CMovie</h1>
           <p className={styles.subtitle}>Find your favorite movies with us!</p>
