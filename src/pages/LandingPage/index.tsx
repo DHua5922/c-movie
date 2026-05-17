@@ -11,7 +11,7 @@ export default function LandingPage() {
 
   return (
     <section>
-      <Container>
+      <Container className="min-full-height">
         <Header
           onSubmit={(event) => {
             event.preventDefault();
@@ -24,10 +24,6 @@ export default function LandingPage() {
           <h1 className={`${styles.title} text-primary`}>Welcome to CMovie</h1>
           <p className={styles.subtitle}>Find your favorite movies with us!</p>
         </Header>
-
-        <figure
-          className={`slide-in-from-left ${styles["hero__figure-wave"]}`}
-        />
 
         <figure className={`scale-in ${styles["hero__img--wrapper"]}`}>
           <img src={landingImage} alt="Movie" className="img" />
