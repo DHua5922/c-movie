@@ -17,35 +17,10 @@
     position: absolute;
     z-index: -2;
     bottom: -32rem;
-    animation: slideInFromLeft var(--animation-duration) ease-in-out;
 }
 
 .hero__img--wrapper {
     margin: 0 auto;
     margin-top: 8rem;
     width: 35rem;
-    animation: scaleIn var(--animation-duration) ease-in;
-}
-
-@keyframes scaleIn {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInFromLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }

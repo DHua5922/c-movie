@@ -1,14 +1,25 @@
 import axios from "axios";
 
 const publicApiKey = "e1dc213ccbcaa6eadb77075160fe39dd";
-const apiBaseUrl = "https://api.themoviedb.org";
+
+const movieAxios = axios.create({
+  baseURL: "https://api.themoviedb.org/3",
+});
 
 async function getMovieListApi(movieName: string, pageNum: number) {
-  const response = await axios({
+  const response = await movieAxios({
     method: "get",
-    url: `${apiBaseUrl}/3/search/movie?api_key=${publicApiKey}&language=en-US&query=${movieName}&page=${pageNum}`,
+    url: `/search/movie?api_key=${publicApiKey}&language=en-US&query=${movieName}&page=${pageNum}`,
   });
   return response.data;
 }
 
-export { getMovieListApi };
+async function getMovieApi(movieId: number) {
+  const response = await movieAxios({
+    method: "get",
+    url: `/movie/${movieId}?api_key=${publicApiKey}&language=en-US`,
+  });
+  return response.data;
+}
+
+export { getMovieListApi, getMovieApi };

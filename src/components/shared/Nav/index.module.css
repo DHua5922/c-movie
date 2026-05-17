@@ -7,7 +7,6 @@
 
 .nav__logo--wrapper {
     width: 7rem;
-    animation: slideInFromLeft var(--animation-duration) ease;
 }
 
 .nav__link--list {
@@ -15,17 +14,6 @@
     align-items: center;
     gap: 1rem;
     animation: slideInFromRight var(--animation-duration) ease;
-}
-
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }
 
 @keyframes slideInFromRight {

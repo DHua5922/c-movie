@@ -10,21 +10,18 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 export default function MovieDisplay({ movie, className, ...props }: Props) {
   return (
     <div className={`${styles["movie__wrapper"]} ${className}`} {...props}>
-      <div key={movie.id} className={styles["movie"]}>
-        <div className={styles.movie__overlay}>Click to see more details</div>
-        {movie.poster_path ? (
-          <MovieImage
-            className={styles["movie__poster"]}
-            title={movie.title}
-            posterPath={movie.poster_path}
-          />
-        ) : (
-          <div className={styles["movie__poster--skeleton"]}>
-            Poster Not Available
-          </div>
-        )}
+      <button
+        key={movie.id}
+        className={styles["movie"]}
+        onClick={movie.onClick}
+      >
+        <MovieImage
+          className={styles["movie__poster"]}
+          title={movie.title}
+          posterPath={movie.poster_path}
+        />
         <h6 className={styles["movie__title"]}>{movie.title}</h6>
-      </div>
+      </button>
     </div>
   );
 }

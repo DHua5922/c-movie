@@ -7,7 +7,9 @@ export default function Nav() {
   return (
     <nav>
       <Container className={styles["nav__row"]}>
-        <Logo containerClassName={styles["nav__logo--wrapper"]} />
+        <Logo
+          containerClassName={`slide-in-from-left ${styles["nav__logo--wrapper"]}`}
+        />
 
         <ul className={styles["nav__link--list"]}>
           <li>

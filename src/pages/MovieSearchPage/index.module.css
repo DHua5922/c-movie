@@ -23,17 +23,4 @@
     height: 75vh;
     overflow-y: auto;
     margin: 2rem 0;
-    transition: all var(--transition-duration) ease;
-    animation: fadeIn var(--animation-duration) ease;
-}
-
-@keyframes fadeIn {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
 }

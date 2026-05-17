@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import Nav from "./components/shared/Nav";
 import Footer from "./components/shared/Footer";
 import MoviesPage from "./pages/MovieSearchPage";
+import MoviePage from "./pages/MoviePage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/movies/:id" element={<MoviePage />} />
         </Routes>
       </main>
       <Footer />

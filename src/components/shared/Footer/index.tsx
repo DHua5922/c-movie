@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="slide-in-from-left">
       <Container className={styles.footer__container}>
         <Logo
           containerClassName={styles["footer__img--wrapper"]}

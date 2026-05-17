@@ -24,9 +24,11 @@ export default function LandingPage() {
           <p className={styles.subtitle}>Find your favorite movies with us!</p>
         </Header>
 
-        <figure className={styles["hero__figure-wave"]} />
+        <figure
+          className={`slide-in-from-left ${styles["hero__figure-wave"]}`}
+        />
 
-        <figure className={styles["hero__img--wrapper"]}>
+        <figure className={`scale-in ${styles["hero__img--wrapper"]}`}>
           <img src={landingImage} alt="Movie" className="img" />
         </figure>
       </Container>
